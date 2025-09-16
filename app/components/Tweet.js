@@ -71,26 +71,28 @@ function Tweet({
     setIsNext(null)
     setComments([])
   }, [tweet])
-
+  console.log(user)
   useEffect(() => {
     ;(async () => {
-      const db = await initDB()
-      const ids = difference(pluck("id")(comments), keys(likes))
-      if (ids.length > 0) {
-        let new_likes = indexBy(prop("aid"))(
-          await db.get(
-            "likes",
-            ["user", "==", user.address],
-            ["aid", "in", ids],
-          ),
-        )
-        for (let v of ids) {
-          if (isNil(new_likes[v])) new_likes[v] = null
+      if (!isNil(user)) {
+        const db = await initDB()
+        const ids = difference(pluck("id")(comments), keys(likes))
+        if (ids.length > 0) {
+          let new_likes = indexBy(prop("aid"))(
+            await db.get(
+              "likes",
+              ["user", "==", user.address],
+              ["aid", "in", ids],
+            ),
+          )
+          for (let v of ids) {
+            if (isNil(new_likes[v])) new_likes[v] = null
+          }
+          setLikes(mergeLeft(new_likes, likes))
         }
-        setLikes(mergeLeft(new_likes, likes))
       }
     })()
-  }, [comments])
+  }, [comments, user])
 
   useEffect(() => {
     ;(async () => {
