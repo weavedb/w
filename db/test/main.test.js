@@ -12,7 +12,7 @@ const user2 = acc[2]
 const users = [user1, user2]
 
 describe("W", () => {
-  it.only("should run a social app", async () => {
+  it("should run a social app", async () => {
     // init app
     const { id, err, db, q: mem } = await init()
     const dbs = [
@@ -155,8 +155,8 @@ describe("W", () => {
       "posts",
     )
     assert.equal((await db.get("posts", tx4.result.doc)).description, "quote-4")
-
     assert.equal((await db.get("posts", tx.result.doc)).reposts, 2)
+    console.log(await db.get("posts", tx.result.doc))
 
     // reply
     const tx5 = await dbs[0].set(

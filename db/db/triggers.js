@@ -230,7 +230,7 @@ const inc_reposts = {
         "toBatch",
         ["update", { quotes: { _$: ["inc"] } }, "posts", "$after.repost"],
       ],
-      "$data",
+      "$after",
     ],
   ],
 }

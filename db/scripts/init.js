@@ -32,8 +32,9 @@ const main = async () => {
   const db = new DB({ jwk, hb, url, id })
   console.log(await db.cget("users"))
   // add owner
-  const txx = await db.set("set:reg_owner", {}, "users", wdb23(addr))
-  console.log(txx)
+  const tx = await db.set("set:reg_owner", {}, "users", wdb23(addr))
+  console.log(tx)
+
   const r = await db.set(
     "update:give_invites",
     { invites },

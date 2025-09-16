@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
+import { icon, id } from "../../../lib/utils"
 import {
   Input,
   Textarea,
@@ -58,18 +59,19 @@ function Page() {
   useEffect(() => {
     ;(async () => {
       if (!isNil(router?.query.id)) {
+        const aid = id(router.query.id)
         const db = await initDB()
         const _posts = await db.cget(
           "posts",
           ["date", "desc"],
-          ["repost", "==", router.query.id],
+          ["repost", "==", aid],
           ["quote", "==", true],
-          limit
+          limit,
         )
         setPosts(_posts)
         setIsNext(_posts.length >= limit)
         setTweets(
-          mergeLeft(compose(indexBy(path(["data", "id"])))(_posts), tweets)
+          mergeLeft(compose(indexBy(path(["data", "id"])))(_posts), tweets),
         )
       }
     })()
@@ -108,8 +110,8 @@ function Page() {
             await db.get(
               "likes",
               ["user", "==", user.address],
-              ["aid", "in", ids]
-            )
+              ["aid", "in", ids],
+            ),
           )
           for (let v of ids) {
             if (isNil(new_likes[v])) new_likes[v] = null
@@ -134,8 +136,8 @@ function Page() {
             await db.get(
               "posts",
               ["owner", "==", user.address],
-              ["repost", "in", ids]
-            )
+              ["repost", "in", ids],
+            ),
           )
           for (let v of ids) {
             if (isNil(new_reposts[v])) new_reposts[v] = null
@@ -254,7 +256,7 @@ function Page() {
                           ["repost", "==", router.query.id],
                           ["quote", "==", true],
                           ["startAfter", last(posts)],
-                          limit
+                          limit,
                         )
                         setPosts(concat(posts, _posts))
                         setIsNext(_posts.length >= limit)

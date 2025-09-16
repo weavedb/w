@@ -8,17 +8,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>{title}</title>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="72x72"
-          href="/images/icon-72x72.png"
-        />
+        <link rel="icon" type="image/svg" href="/images/favicon.svg" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta key="description" name="description" content={description} />
         <meta
