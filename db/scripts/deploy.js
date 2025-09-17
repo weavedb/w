@@ -2,6 +2,7 @@ import yargs from "yargs"
 import { resolve } from "path"
 import { readFileSync, writeFileSync } from "fs"
 import { toAddr } from "wao/utils"
+import { acc } from "wao/test"
 import { DB } from "wdb-sdk"
 import schemas from "../db/schemas.js"
 import auth from "../db/auth.js"
@@ -23,6 +24,10 @@ try {
 }
 
 const main = async () => {
+  console.log(toAddr(acc[0].jwk.n))
+  console.log(toAddr(acc[1].jwk.n))
+  console.log(toAddr(acc[2].jwk.n))
+
   console.log(`HyperBEAM: ${hb}`)
   console.log(`DB Rollup: ${url}`)
   console.log(`Wallet: ${toAddr(jwk.n)}`)

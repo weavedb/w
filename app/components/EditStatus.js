@@ -33,7 +33,7 @@ export default function EditUser({
       h="100%"
       w="100%"
       bg="rgba(0,0,0,0.5)"
-      sx={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
+      css={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
       align="center"
       justify="center"
     >
@@ -43,13 +43,13 @@ export default function EditUser({
         m={4}
         maxW="650px"
         width="100%"
-        sx={{ borderRadius: "5px" }}
+        css={{ borderRadius: "5px" }}
         fontSize="14px"
       >
         <Flex fontSize="18px" justify="flex-end" mx={4} mt={2} mb="-15px">
           <Box
             onClick={() => setEditStatus(false)}
-            sx={{
+            css={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -58,7 +58,7 @@ export default function EditUser({
           </Box>
         </Flex>
         {!isNil(replyTo) && !repost && !isNil(tweet) ? (
-          <Box p={2} mx={2} sx={{ borderBottom: "1px solid #ccc" }} mb={4}>
+          <Box p={2} mx={2} css={{ borderBottom: "1px solid #ccc" }} mb={4}>
             <Tweet {...{ isLink: false, tweet, users, buttons: false }} />
           </Box>
         ) : null}
@@ -99,7 +99,7 @@ export default function EditUser({
                 <Box
                   mr={4}
                   fontSize="20px"
-                  sx={{
+                  css={{
                     cursor: "pointer",
                     ":hover": { opacity: 0.75 },
                     opacity: mode === "simple" ? 0.3 : 1,
@@ -115,7 +115,7 @@ export default function EditUser({
                 as="label"
                 htmlFor="cover-image"
                 fontSize="20px"
-                sx={{
+                css={{
                   cursor: "pointer",
                   ":hover": { opacity: 0.75 },
                 }}
@@ -157,7 +157,7 @@ export default function EditUser({
             <Flex justify="center" w="100%" mb={2}>
               <Box flex={1} />
               <Image
-                sx={{
+                css={{
                   cursor: "pointer",
                   ":hover": { opacity: 0.75 },
                 }}
@@ -201,7 +201,7 @@ export default function EditUser({
                 <Box
                   m={6}
                   onClick={() => setCoverIcon(null)}
-                  sx={{
+                  css={{
                     cursor: "pointer",
                     ":hover": { opacity: 0.75 },
                   }}
@@ -214,7 +214,7 @@ export default function EditUser({
           )}
           {!isNil(repost) ? (
             <Box
-              sx={{ border: "1px solid #ccc", borderRadius: "10px" }}
+              css={{ border: "1px solid #ccc", borderRadius: "10px" }}
               mb={4}
               mt={2}
             >
@@ -231,7 +231,7 @@ export default function EditUser({
               justify="center"
               align="center"
               p={2}
-              sx={{
+              css={{
                 borderRadius: "5px",
                 cursor: ok ? "pointer" : "default",
                 ":hover": { opacity: ok ? 0.75 : 1 },

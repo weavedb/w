@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "wdb-sdk": "^0.0.24"
+  }
+}

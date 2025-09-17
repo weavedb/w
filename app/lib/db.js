@@ -1,4 +1,3 @@
-import SDK from "weavedb-client"
 import { DB, wdb23, wdb160 } from "wdb-sdk"
 let db = null
 let ndb = null
@@ -28,16 +27,13 @@ const hb = process.env.NEXT_PUBLIC_HB
 const rpc = process.env.NEXT_PUBLIC_RPC
 
 export const initDB = async () => {
-  return new DB({
-    id: dbid,
-    url: rollup,
-    hb,
-  })
+  return new DB({ id: dbid, url: rollup, hb })
 }
 
 export const initNDB = async () => {
-  ndb ??= new SDK({ rpc, contractTxId: `${contractTxId}#notifications` })
-  return ndb
+  //ndb ??= new SDK({ rpc, contractTxId: `${contractTxId}#notifications` })
+  //return ndb
+  return null
 }
 
 export const login = async () => {

@@ -189,7 +189,7 @@ function Tweet({
 
   return (
     <>
-      <Box sx={{ position: "relative" }}>
+      <Box css={{ position: "relative" }}>
         {isNil(parent) ? (
           embed
         ) : isLink ? (
@@ -236,7 +236,7 @@ function Tweet({
           <Flex
             mt={2}
             fontSize="14px"
-            sx={{ borderBottom: "1px #ccc solid" }}
+            css={{ borderBottom: "1px #ccc solid" }}
             pb={main ? 3 : 2}
             onClick={async () => {
               const db = await initDB()
@@ -255,7 +255,7 @@ function Tweet({
             <Box w="58px" />
             <Box
               mx={[0, null, null, 4]}
-              sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
+              css={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
             >
               Show replies
             </Box>
@@ -265,7 +265,7 @@ function Tweet({
           <Box
             bg="#ddd"
             w="2px"
-            sx={{
+            css={{
               position: "absolute",
               top: 0,
               left: ["28px", null, null, "36px"],

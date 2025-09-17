@@ -35,7 +35,7 @@ export default function Article({
       <Box
         ml={10}
         color={!isNil(likes[post.id]) ? "#F91880" : ""}
-        sx={{
+        css={{
           cursor:
             preview || !isNil(likes[post.id]) || isNil(user)
               ? "default"
@@ -75,7 +75,7 @@ export default function Article({
       <Box
         ml={10}
         color={reposted ? "#00BA7C" : ""}
-        sx={{
+        css={{
           cursor: preview || isNil(user) ? "default" : "pointer",
           "hover:": {
             opacity: preview || isNil(user) ? 1 : 0.75,
@@ -115,7 +115,7 @@ export default function Article({
                   boxSize="40px"
                   m={1}
                   mr={3}
-                  sx={{ borderRadius: "50%" }}
+                  css={{ borderRadius: "50%" }}
                 />
               ) : (
                 <Link
@@ -129,7 +129,7 @@ export default function Article({
                     boxSize="40px"
                     m={1}
                     mr={3}
-                    sx={{ borderRadius: "50%" }}
+                    css={{ borderRadius: "50%" }}
                   />
                 </Link>
               )}
@@ -193,7 +193,7 @@ export default function Article({
         )}
         {main ? (
           <Flex
-            sx={{
+            css={{
               borderTop: "1px #ccc solid",
               borderBottom: "1px #ccc solid",
             }}
@@ -205,7 +205,7 @@ export default function Article({
               <b>{post.comments ?? 0}</b> Comments
             </Box>
             <Box
-              sx={{
+              css={{
                 cursor:
                   !disabled && post.reposts - post.quotes > 0
                     ? "pointer"
@@ -225,7 +225,7 @@ export default function Article({
               <b>{(post.reposts ?? 0) - (post.quotes ?? 0)}</b> Reposts
             </Box>
             {disabled || post.quotes === 0 ? (
-              <Box ml={6} color="#333" sx={{ cursor: "default" }}>
+              <Box ml={6} color="#333" css={{ cursor: "default" }}>
                 <b>{post.quotes ?? 0}</b> Quotes
               </Box>
             ) : (
@@ -233,7 +233,7 @@ export default function Article({
                 <Box
                   ml={6}
                   color="#333"
-                  sx={{
+                  css={{
                     ":hover": { textDecoration: "underline", color: "#333" },
                   }}
                 >
@@ -247,7 +247,7 @@ export default function Article({
                 if (!disabled && post.likes > 0) setShowLikes(true)
               }}
               ml={6}
-              sx={{
+              css={{
                 cursor: !disabled && post.likes > 0 ? "pointer" : "default",
                 ":hover":
                   !disabled && post.likes > 0
@@ -262,7 +262,7 @@ export default function Article({
               <Box display={["none", "flex"]}>
                 <Link href={`/s/${post.id}/edit`}>
                   <Box
-                    sx={{
+                    css={{
                       cursor: "pointer",
                       ":hover": { textDecoration: "underline", color: "#333" },
                     }}
@@ -280,7 +280,7 @@ export default function Article({
                     }
                   }}
                   ml={6}
-                  sx={{
+                  css={{
                     cursor: "pointer",
                     ":hover": { textDecoration: "underline" },
                   }}
@@ -301,7 +301,7 @@ export default function Article({
           >
             <Link href={`/s/${post.id}/edit`}>
               <Box
-                sx={{
+                css={{
                   cursor: "pointer",
                   ":hover": { textDecoration: "underline", color: "#333" },
                 }}
@@ -319,7 +319,7 @@ export default function Article({
                 }
               }}
               ml={6}
-              sx={{
+              css={{
                 cursor: "pointer",
                 ":hover": { textDecoration: "underline" },
               }}

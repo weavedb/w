@@ -3,13 +3,12 @@ import { Html, Head, Main, NextScript } from "next/document"
 export default function Document() {
   const title = "W"
   const description = "Decentralized Social"
-  const image = "https://jots.weavedb.dev/images/cover.png"
+  const image = "https://w.weavedb.dev/images/cover.png"
   return (
-    <Html lang="en">
+    <Html lang="en" suppressHydrationWarning>
       <Head>
         <title>{title}</title>
         <link rel="icon" type="image/svg" href="/images/favicon.svg" />
-        <link rel="manifest" href="/site.webmanifest" />
         <meta key="description" name="description" content={description} />
         <meta
           key="twitter:card"
