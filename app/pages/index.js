@@ -27,7 +27,6 @@ import {
   last,
   mergeLeft,
 } from "ramda"
-
 import Tweet from "../components/Tweet"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -35,11 +34,10 @@ import Alpha from "../components/Alpha"
 import EditUser from "../components/EditUser"
 import EditStatus from "../components/EditStatus"
 import EditPost from "../components/EditPost"
-
 import { checkUser, initDB, getTweets, getUsers } from "../lib/db"
 import { DB } from "wdb-sdk"
 const limit = 10
-export default function Home() {
+function Page() {
   const [posts, setPosts] = useState([])
   const [isNext, setIsNext] = useState(false)
   const [isNextTL, setIsNextTL] = useState(false)
@@ -194,7 +192,7 @@ export default function Home() {
   ]
 
   return (
-    <>
+    <ChakraProvider>
       <style jsx global>{`
         html,
         body,
@@ -238,7 +236,7 @@ export default function Home() {
                 bg="white"
                 w="100%"
                 justify="center"
-                css={{
+                sx={{
                   zIndex: 2,
                   position: "fixed",
                   top: "50px",
@@ -253,7 +251,7 @@ export default function Home() {
                   pt={2}
                   px={4}
                   bg="white"
-                  css={{
+                  sx={{
                     borderBottom: "1px solid #ccc",
                     borderX: "1px solid #ccc",
                   }}
@@ -269,7 +267,7 @@ export default function Home() {
                         flex={1}
                         mx={8}
                         pb={2}
-                        css={{
+                        sx={{
                           cursor: "pointer",
                           ":hover": { opacity: 0.75 },
                           borderBottom: tab === v.key ? "3px solid #666" : "",
@@ -293,7 +291,7 @@ export default function Home() {
                 w="100%"
                 maxW="760px"
                 minH="100%"
-                css={{ borderX: "1px solid #ccc" }}
+                sx={{ borderX: "1px solid #ccc" }}
               >
                 {tab === "following" ? (
                   <>
@@ -349,7 +347,7 @@ export default function Home() {
                           color="white"
                           height="auto"
                           align="center"
-                          css={{
+                          sx={{
                             borderRadius: "20px",
                             cursor: "pointer",
                             ":hover": { opacity: 0.75 },
@@ -403,7 +401,7 @@ export default function Home() {
                           color="white"
                           height="auto"
                           align="center"
-                          css={{
+                          sx={{
                             borderRadius: "20px",
                             cursor: "pointer",
                             ":hover": { opacity: 0.75 },
@@ -450,6 +448,8 @@ export default function Home() {
         <EditUser {...{ setEditUser, editUser, identity, setUser, user }} />
         <Footer {...{ user, setEditPost }} />
       </Box>
-    </>
+    </ChakraProvider>
   )
 }
+
+export default Page

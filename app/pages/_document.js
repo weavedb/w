@@ -5,10 +5,11 @@ export default function Document() {
   const description = "Decentralized Social"
   const image = "https://w.weavedb.dev/images/cover.png"
   return (
-    <Html lang="en" suppressHydrationWarning>
+    <Html lang="en">
       <Head>
         <title>{title}</title>
         <link rel="icon" type="image/svg" href="/images/favicon.svg" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta key="description" name="description" content={description} />
         <meta
           key="twitter:card"

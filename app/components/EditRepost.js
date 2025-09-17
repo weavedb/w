@@ -21,7 +21,7 @@ export default function EditUser({
       h="100%"
       w="100%"
       bg="rgba(0,0,0,0.5)"
-      css={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
+      sx={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
       align="center"
       justify="center"
     >
@@ -30,13 +30,13 @@ export default function EditUser({
         bg="white"
         m={4}
         maxW="650px"
-        css={{ borderRadius: "5px" }}
+        sx={{ borderRadius: "5px" }}
         pb={5}
       >
         <Flex fontSize="18px" justify="flex-end" mx={4} mt={2} mb="-15px">
           <Box
             onClick={() => setEditRepost(null)}
-            css={{
+            sx={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -54,7 +54,7 @@ export default function EditUser({
             justify="center"
             align="center"
             w="250px"
-            css={{
+            sx={{
               borderRadius: "5px",
               cursor: reposted ? "default" : "pointer",
               ":hover": { opacity: reposted ? 1 : 0.75 },
@@ -78,7 +78,7 @@ export default function EditUser({
             justify="center"
             align="center"
             w="250px"
-            css={{
+            sx={{
               borderRadius: "5px",
               cursor: "pointer",
               ":hover": { opacity: 0.75 },

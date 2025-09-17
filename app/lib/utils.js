@@ -8,7 +8,7 @@ const icon = puser => {
 
 function id(num) {
   let result = ""
-
+  num = +num
   try {
     if (num === 0) return "A"
 
@@ -26,11 +26,11 @@ function id(num) {
   }
 }
 
-function num(base64urlString) {
+function num(str) {
   let result = 0
 
   try {
-    const cleanBase64url = base64urlString.replace(/=/g, "")
+    const cleanBase64url = str.replace(/=/g, "")
 
     const base64urlChars =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
@@ -51,7 +51,7 @@ function num(base64urlString) {
     return result
   } catch (e) {
     console.log(e)
-    return base64urlString
+    return str
   }
 }
 
