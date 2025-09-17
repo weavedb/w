@@ -49,7 +49,7 @@ export default function EditUser({
       h="100%"
       w="100%"
       bg="rgba(0,0,0,0.5)"
-      sx={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
+      css={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
       align="center"
       justify="center"
     >
@@ -59,7 +59,7 @@ export default function EditUser({
         m={4}
         maxW="500px"
         width="100%"
-        sx={{ borderRadius: "5px" }}
+        css={{ borderRadius: "5px" }}
         fontSize="14px"
       >
         <Flex fontSize="18px" justify="flex-end" mx={4} mt={2} mb="-15px">
@@ -71,7 +71,7 @@ export default function EditUser({
               }
               setEditUser(false)
             }}
-            sx={{
+            css={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -99,7 +99,7 @@ export default function EditUser({
                 justify="center"
                 align="center"
                 p={2}
-                sx={{
+                css={{
                   borderRadius: "5px",
                   cursor: "pointer",
                   ":hover": { opacity: 0.75 },
@@ -120,7 +120,7 @@ export default function EditUser({
                   <Image
                     src={icon ?? _icon(user)}
                     boxSize="60px"
-                    sx={{ borderRadius: "50px" }}
+                    css={{ borderRadius: "50px" }}
                   />
                 </Box>
                 <Box flex={1}>
@@ -256,7 +256,7 @@ export default function EditUser({
                   justify="center"
                   align="center"
                   p={2}
-                  sx={{
+                  css={{
                     borderRadius: "5px",
                     cursor: ok ? "pointer" : "default",
                     ":hover": { opacity: 0.75 },

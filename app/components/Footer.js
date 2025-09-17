@@ -30,7 +30,7 @@ function Footer({ user, setEditPost, setReplyTo, wide = false }) {
       w="100%"
       justify="center"
       height="50px"
-      sx={{
+      css={{
         zIndex: 98,
         position: "fixed",
         bottom: 0,
@@ -44,7 +44,7 @@ function Footer({ user, setEditPost, setReplyTo, wide = false }) {
         maxW="760px"
         align="center"
         py={2}
-        sx={{
+        css={{
           borderTop: wide ? "" : "1px solid #ccc",
           borderX: wide ? "" : "1px solid #ccc",
         }}
@@ -54,7 +54,7 @@ function Footer({ user, setEditPost, setReplyTo, wide = false }) {
             justify="center"
             flex={1}
             mx={2}
-            sx={{
+            css={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -70,12 +70,12 @@ function Footer({ user, setEditPost, setReplyTo, wide = false }) {
               fontSize="20px"
               as="i"
               className={v.icon}
-              sx={{ position: "relative" }}
+              css={{ position: "relative" }}
             >
               {v.count && count > 0 ? (
                 <Box
                   fontSize="10px"
-                  sx={{
+                  css={{
                     borderRadius: "3px",
                     position: "absolute",
                     bottom: "-5px",

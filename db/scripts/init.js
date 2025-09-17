@@ -29,11 +29,12 @@ const main = async () => {
   console.log(`DB Rollup: ${url}`)
   console.log(`Wallet: ${addr}`)
   console.log(`DB: ${id}`)
+
   const db = new DB({ jwk, hb, url, id })
-  console.log(await db.cget("users"))
+
   // add owner
   const tx = await db.set("set:reg_owner", {}, "users", wdb23(addr))
-  console.log(tx)
+  if (tx.success) console.log(`Owner Added: ${wdb23(addr)}`)
 
   const r = await db.set(
     "update:give_invites",
@@ -41,7 +42,7 @@ const main = async () => {
     "users",
     wdb23(addr),
   )
-  console.log(r)
+  if (r.success) console.log(`${invites} Invites Given: ${wdb23(addr)}`)
 }
 
 main()

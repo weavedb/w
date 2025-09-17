@@ -81,17 +81,17 @@ export default function Editor() {
           if (!isNil(post.data.body)) {
             try {
               const json = await fetch(post.data.body, { mode: "cors" }).then(
-                v => v.json()
+                v => v.json(),
               )
               setTitle(
                 (await lf.getItem(`edit-title-${editID ?? "new"}`)) ??
                   post.data.title ??
-                  ""
+                  "",
               )
               setBody(
                 (await lf.getItem(`edit-body-${editID ?? "new"}`)) ??
                   post.data.description ??
-                  ""
+                  "",
               )
               setEditContent(json)
             } catch (e) {}
@@ -212,7 +212,7 @@ export default function Editor() {
                                 setTitle(e.target.value)
                                 await lf.setItem(
                                   `edit-title-${editID ?? "new"}`,
-                                  e.target.value
+                                  e.target.value,
                                 )
                               }
                             }}
@@ -230,7 +230,7 @@ export default function Editor() {
                                 setBody(e.target.value)
                                 await lf.setItem(
                                   `edit-body-${editID ?? "new"}`,
-                                  e.target.value
+                                  e.target.value,
                                 )
                               }
                             }}
@@ -257,7 +257,7 @@ export default function Editor() {
                                         maxWidth: 800,
                                         maxHeight: 800,
                                         mimeType: e.target.files[0].type,
-                                      }
+                                      },
                                     )
                                     let reader = new FileReader()
                                     reader.readAsDataURL(file)
@@ -279,7 +279,7 @@ export default function Editor() {
                             w="100%"
                             justify="center"
                             p={2}
-                            sx={{
+                            css={{
                               borderRadius: "5px",
                               cursor: ok ? "pointer" : "default",
                               ":hover": { opacity: ok ? 0.75 : 1 },
@@ -300,7 +300,7 @@ export default function Editor() {
                                   })
                                   if (isNil(err)) {
                                     await lf.removeItem(
-                                      `edit-${editID ?? "new"}`
+                                      `edit-${editID ?? "new"}`,
                                     )
                                     router.push(`/s/${post.id}`)
                                   }

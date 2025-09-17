@@ -27,18 +27,19 @@ import {
   last,
   mergeLeft,
 } from "ramda"
+
 import Tweet from "../components/Tweet"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Alpha from "../components/Alpha"
-import SDK from "weavedb-client"
 import EditUser from "../components/EditUser"
 import EditStatus from "../components/EditStatus"
 import EditPost from "../components/EditPost"
+
 import { checkUser, initDB, getTweets, getUsers } from "../lib/db"
 import { DB } from "wdb-sdk"
 const limit = 10
-function Page() {
+export default function Home() {
   const [posts, setPosts] = useState([])
   const [isNext, setIsNext] = useState(false)
   const [isNextTL, setIsNextTL] = useState(false)
@@ -193,7 +194,7 @@ function Page() {
   ]
 
   return (
-    <ChakraProvider>
+    <>
       <style jsx global>{`
         html,
         body,
@@ -237,7 +238,7 @@ function Page() {
                 bg="white"
                 w="100%"
                 justify="center"
-                sx={{
+                css={{
                   zIndex: 2,
                   position: "fixed",
                   top: "50px",
@@ -252,7 +253,7 @@ function Page() {
                   pt={2}
                   px={4}
                   bg="white"
-                  sx={{
+                  css={{
                     borderBottom: "1px solid #ccc",
                     borderX: "1px solid #ccc",
                   }}
@@ -268,7 +269,7 @@ function Page() {
                         flex={1}
                         mx={8}
                         pb={2}
-                        sx={{
+                        css={{
                           cursor: "pointer",
                           ":hover": { opacity: 0.75 },
                           borderBottom: tab === v.key ? "3px solid #666" : "",
@@ -292,7 +293,7 @@ function Page() {
                 w="100%"
                 maxW="760px"
                 minH="100%"
-                sx={{ borderX: "1px solid #ccc" }}
+                css={{ borderX: "1px solid #ccc" }}
               >
                 {tab === "following" ? (
                   <>
@@ -348,7 +349,7 @@ function Page() {
                           color="white"
                           height="auto"
                           align="center"
-                          sx={{
+                          css={{
                             borderRadius: "20px",
                             cursor: "pointer",
                             ":hover": { opacity: 0.75 },
@@ -402,7 +403,7 @@ function Page() {
                           color="white"
                           height="auto"
                           align="center"
-                          sx={{
+                          css={{
                             borderRadius: "20px",
                             cursor: "pointer",
                             ":hover": { opacity: 0.75 },
@@ -449,8 +450,6 @@ function Page() {
         <EditUser {...{ setEditUser, editUser, identity, setUser, user }} />
         <Footer {...{ user, setEditPost }} />
       </Box>
-    </ChakraProvider>
+    </>
   )
 }
-
-export default Page

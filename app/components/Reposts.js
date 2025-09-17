@@ -40,7 +40,7 @@ export default function Reposts({ setShowReposts, post }) {
       h="100%"
       w="100%"
       bg="rgba(0,0,0,0.5)"
-      sx={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
+      css={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
       align="center"
       justify="center"
     >
@@ -51,7 +51,7 @@ export default function Reposts({ setShowReposts, post }) {
         maxW="550px"
         width="100%"
         maxH="70%"
-        sx={{ borderRadius: "5px", overflowY: "auto" }}
+        css={{ borderRadius: "5px", overflowY: "auto" }}
         fontSize="14px"
       >
         <Flex fontSize="18px" mx={4} my={2}>
@@ -61,7 +61,7 @@ export default function Reposts({ setShowReposts, post }) {
           <Box flex={1} />
           <Box
             onClick={() => setShowReposts(false)}
-            sx={{
+            css={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -77,7 +77,7 @@ export default function Reposts({ setShowReposts, post }) {
             <Link href={`/u/${u.handle}`}>
               <Box
                 p={2}
-                sx={{
+                css={{
                   borderBottom: "1px solid #ccc",
                   cursor: "pointer",
                   ":hover": { opacity: 0.75 },
@@ -88,7 +88,7 @@ export default function Reposts({ setShowReposts, post }) {
                     m={2}
                     src={icon(u)}
                     boxSize="50px"
-                    sx={{ borderRadius: "50%" }}
+                    css={{ borderRadius: "50%" }}
                   />
                   <Box>
                     <Box>
@@ -112,7 +112,7 @@ export default function Reposts({ setShowReposts, post }) {
               color="white"
               height="auto"
               align="center"
-              sx={{
+              css={{
                 borderRadius: "20px",
                 cursor: "pointer",
                 ":hover": { opacity: 0.75 },

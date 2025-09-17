@@ -51,7 +51,7 @@ function Header({
       w="100%"
       justify="center"
       height="50px"
-      sx={{
+      css={{
         zIndex: 99,
         position: "fixed",
         top: 0,
@@ -66,7 +66,7 @@ function Header({
         align="center"
         py={2}
         px={4}
-        sx={{
+        css={{
           borderBottom: wide ? "" : "1px solid #ccc",
           borderX: wide ? "" : "1px solid #ccc",
         }}
@@ -83,7 +83,7 @@ function Header({
         >
           <Flex
             align="center"
-            sx={{
+            css={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -99,7 +99,7 @@ function Header({
           <Box
             display={["none", "block"]}
             mx={2}
-            sx={{
+            css={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -121,7 +121,7 @@ function Header({
               }
             }}
             mx={2}
-            sx={{
+            css={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -135,7 +135,7 @@ function Header({
                 display={["none", "block"]}
                 onClick={() => setEditPost(true)}
                 mx={2}
-                sx={{
+                css={{
                   cursor: "pointer",
                   ":hover": { opacity: 0.75 },
                 }}
@@ -149,7 +149,7 @@ function Header({
                     <Box
                       onClick={async () => conf.setTab(v.key)}
                       mx={2}
-                      sx={{
+                      css={{
                         cursor: "pointer",
                         ":hover": { opacity: 0.75 },
                         textDecoration: v.key === conf.tab ? "underline" : "",
@@ -165,12 +165,12 @@ function Header({
               <Box
                 mx={2}
                 display={["none", "block"]}
-                sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
+                css={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
               >
                 <Flex
                   bg={count > 0 ? "#1D9BF0" : "#999"}
                   boxSize="30px"
-                  sx={{ borderRadius: "50%", position: "relative" }}
+                  css={{ borderRadius: "50%", position: "relative" }}
                   justify="center"
                   align="center"
                 >
@@ -178,7 +178,7 @@ function Header({
                   {count > 0 ? (
                     <Box
                       fontSize="10px"
-                      sx={{
+                      css={{
                         borderRadius: "3px",
                         position: "absolute",
                         bottom: "-5px",
@@ -194,13 +194,13 @@ function Header({
                 </Flex>
               </Box>
             </Link>
-            <Flex align="center" sx={{ position: "relative" }}>
+            <Flex align="center" css={{ position: "relative" }}>
               <Image
                 onClick={() => setUserMenu(!userMenu)}
                 src={icon(user)}
                 boxSize="30px"
                 ml={2}
-                sx={{
+                css={{
                   cursor: "pointer",
                   ":hover": { opacity: 0.75 },
                   borderRadius: "50%",
@@ -211,7 +211,7 @@ function Header({
                   py={2}
                   bg="#333"
                   color="white"
-                  sx={{
+                  css={{
                     border: "white 1px solid",
                     borderRadius: "7px",
                     width: "175px",
@@ -227,7 +227,7 @@ function Header({
                       display={["none", "block"]}
                       py={2}
                       px={4}
-                      sx={{
+                      css={{
                         cursor: "pointer",
                         ":hover": { opacity: 0.75 },
                       }}
@@ -246,7 +246,7 @@ function Header({
                     }}
                     py={2}
                     px={4}
-                    sx={{
+                    css={{
                       cursor: "pointer",
                       ":hover": { opacity: 0.75 },
                     }}
@@ -263,7 +263,7 @@ function Header({
                         <Box
                           py={2}
                           px={4}
-                          sx={{
+                          css={{
                             cursor: "pointer",
                             ":hover": { opacity: 0.75 },
                           }}

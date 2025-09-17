@@ -105,7 +105,7 @@ const Embed = ({
         pt={[3, 2]}
         pb={isNil(parent) && !main ? 0 : 2}
         align="center"
-        sx={{
+        css={{
           cursor: isLink ? "pointer" : "default",
           ":hover": { opacity: isLink ? 0.75 : 1 },
         }}
@@ -125,7 +125,7 @@ const Embed = ({
                   src={uicon}
                   boxSize="50px"
                   m={1}
-                  sx={{ borderRadius: "50%" }}
+                  css={{ borderRadius: "50%" }}
                 />
               </Link>
             )}
@@ -159,7 +159,7 @@ const Embed = ({
                       : "25px",
                   ]}
                   mr={3}
-                  sx={{ borderRadius: "50%" }}
+                  css={{ borderRadius: "50%" }}
                 />
               </Link>
             )}
@@ -197,7 +197,7 @@ const Embed = ({
                               src={uicon}
                               boxSize="20px"
                               mr={2}
-                              sx={{ borderRadius: "50%" }}
+                              css={{ borderRadius: "50%" }}
                             />
                           </Link>
                         )}
@@ -218,7 +218,7 @@ const Embed = ({
               !isNil(tweet.title) ? (
               <Box
                 display={["block", "none"]}
-                sx={{
+                css={{
                   borderRadius: "3px",
                   backgroundPosition: "center",
                   backgroundSize: "cover",
@@ -277,7 +277,7 @@ const Embed = ({
                   src={tweet.cover}
                   maxW="100%"
                   maxH="500px"
-                  sx={{
+                  css={{
                     cursor: disabled ? "default" : "pointer",
                     ":hover": { opacity: disabled ? 1 : 0.75 },
                   }}
@@ -292,7 +292,7 @@ const Embed = ({
               mt={3}
               mb={main ? 2 : 0}
               ml={[8, null, null, 0]}
-              sx={{
+              css={{
                 ":hover": { opacity: 0.75 },
                 border: "1px solid #ccc",
                 borderRadius: "10px",
@@ -307,7 +307,7 @@ const Embed = ({
           !isNil(tweet.title) ? (
           <Box
             display={["none", "block"]}
-            sx={{
+            css={{
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundImage: tweet.cover,
@@ -322,7 +322,7 @@ const Embed = ({
       {!main ? null : (
         <>
           <Flex
-            sx={{
+            css={{
               borderTop: "1px #ccc solid",
               borderBottom: "1px #ccc solid",
             }}
@@ -337,7 +337,7 @@ const Embed = ({
             <Box
               ml={6}
               color="#333"
-              sx={{
+              css={{
                 cursor:
                   tweet.reposts - tweet.quotes > 0 ? "pointer" : "default",
                 ":hover":
@@ -352,7 +352,7 @@ const Embed = ({
               <b>{(tweet.reposts ?? 0) - (tweet.quotes ?? 0)}</b> Reposts
             </Box>
             {tweet.quotes === 0 ? (
-              <Box ml={6} color="#333" sx={{ cursor: "default" }}>
+              <Box ml={6} color="#333" css={{ cursor: "default" }}>
                 <b>{tweet.quotes ?? 0}</b> Quotes
               </Box>
             ) : (
@@ -360,7 +360,7 @@ const Embed = ({
                 <Box
                   ml={6}
                   color="#333"
-                  sx={{ ":hover": { textDecoration: "underline" } }}
+                  css={{ ":hover": { textDecoration: "underline" } }}
                 >
                   <b>{tweet.quotes ?? 0}</b> Quotes
                 </Box>
@@ -372,7 +372,7 @@ const Embed = ({
               }}
               ml={6}
               color="#333"
-              sx={{
+              css={{
                 cursor: tweet.likes === 0 ? "default" : "pointer",
                 ":hover":
                   tweet.likes === 0 ? {} : { textDecoration: "underline" },
@@ -392,7 +392,7 @@ const Embed = ({
                     }
                   }}
                   ml={6}
-                  sx={{
+                  css={{
                     cursor: "pointer",
                     ":hover": { textDecoration: "underline" },
                   }}
@@ -406,7 +406,7 @@ const Embed = ({
       )}
       {!buttons || !isNil(parent) ? null : (
         <Flex
-          sx={{
+          css={{
             borderBottom:
               !isComment && isNil(parent) ? "1px solid #ccc" : "0px",
           }}
@@ -421,7 +421,7 @@ const Embed = ({
           <Box
             ml={10}
             color={reposted ? "#00BA7C" : ""}
-            sx={{
+            css={{
               cursor: isNil(user) ? "default" : "pointer",
               ":hover": {
                 opacity: disabled || isNil(user) ? 1 : 0.75,
@@ -440,7 +440,7 @@ const Embed = ({
           <Box
             ml={10}
             color={!isNil(likes[tweet.id]) ? "#F91880" : ""}
-            sx={{
+            css={{
               cursor:
                 !isNil(likes[tweet.id]) || isNil(user) ? "default" : "pointer",
               ":hover": {
@@ -480,7 +480,7 @@ const Embed = ({
                     }
                   }}
                   fontSize="14px"
-                  sx={{
+                  css={{
                     cursor: "pointer",
                     ":hover": { textDecoration: "underline" },
                   }}
