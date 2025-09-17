@@ -38,7 +38,7 @@ export default function Likes({ setShowLikes, post }) {
       h="100%"
       w="100%"
       bg="rgba(0,0,0,0.5)"
-      css={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
+      sx={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}
       align="center"
       justify="center"
     >
@@ -49,7 +49,7 @@ export default function Likes({ setShowLikes, post }) {
         maxW="550px"
         width="100%"
         maxH="70%"
-        css={{ borderRadius: "5px", overflowY: "auto" }}
+        sx={{ borderRadius: "5px", overflowY: "auto" }}
         fontSize="14px"
       >
         <Flex fontSize="18px" mx={4} my={2}>
@@ -59,7 +59,7 @@ export default function Likes({ setShowLikes, post }) {
           <Box flex={1} />
           <Box
             onClick={() => setShowLikes(false)}
-            css={{
+            sx={{
               cursor: "pointer",
               ":hover": { opacity: 0.75 },
             }}
@@ -73,7 +73,7 @@ export default function Likes({ setShowLikes, post }) {
             <Link href={`/u/${u.handle}`}>
               <Box
                 p={2}
-                css={{
+                sx={{
                   borderBottom: "1px solid #ccc",
                   cursor: "pointer",
                   ":hover": { opacity: 0.75 },
@@ -84,7 +84,7 @@ export default function Likes({ setShowLikes, post }) {
                     m={2}
                     src={icon(u)}
                     boxSize="50px"
-                    css={{ borderRadius: "50%" }}
+                    sx={{ borderRadius: "50%" }}
                   />
                   <Box>
                     <Box>
@@ -108,7 +108,7 @@ export default function Likes({ setShowLikes, post }) {
               color="white"
               height="auto"
               align="center"
-              css={{
+              sx={{
                 borderRadius: "20px",
                 cursor: "pointer",
                 ":hover": { opacity: 0.75 },

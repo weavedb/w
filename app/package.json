@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "w",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,15 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.27.0",
-    "@emotion/react": "^11.14.0",
     "next": "15.5.3",
     "next-themes": "^0.4.6",
-    "ramda": "^0.31.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0",
-    "wdb-sdk": "^0.0.24",
+    "@chakra-ui/react": "^2.5.3",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "framer-motion": "^10.9.1",
+    "ramda": "^0.28.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "@excalidraw/excalidraw": "^0.15.2",
     "@google-cloud/storage": "^6.12.0",
     "@lexical/file": "^0.11.3",
