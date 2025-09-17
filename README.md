@@ -13,12 +13,9 @@ With WeaveDB, building apps is insanely simple. All it takes is [4 JSON configur
 - [Indexes](./db/db/indexes.js)
 - [Triggers](./db/db/triggers.js)
 
-That’s it. No smart contracts. No backend infrastructure. The entire equivalent of X can be defined in just a few hundred lines of JSON. The database itself is the smart contract — it handles code as data.
+That’s it. No smart contracts. No backend infrastructure. The entire equivalent of X can be defined in just a few hundred lines of JSON. The database itself is the smart contract — it handles [code as data](https://en.wikipedia.org/wiki/Code_as_data).
 
 This radical simplicity is perfectly aligned with LLMs like Claude and ChatGPT. An LLM can build a fully functional, complex social app backend in under three minutes. Yes, you don't even have to write it.
-
-This is a paradigm shift in app development. WeaveDB will ignite a Cambrian explosion of decentralized apps.
-
 
 ## Running App Loccaly
 
@@ -76,3 +73,17 @@ yarn dev
 
 Now, W is running at [localhost:3000](http://localhost:3000).
 
+
+## App Building as Protocol
+
+WeaveDB is not about building one gigantic social network like X.
+It’s about creating a mesh of database/app instances.
+
+It’s the protocolization and democratization of social app building.
+Anyone can launch their own network. Thousands of W instances can exist, each fully sovereign but interoperable, each fully decentralized.
+
+With WeaveDB, social platforms aren’t monopolies — they’re ecosystems.
+This is the paradigm shift in app development.
+WeaveDB will ignite a Cambrian explosion of decentralized apps.
+
+[W](https://w.weavedb.dev) is just the first. All web2 apps will be protocolized.
